@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ho",
+    " sh",
+    "s  "
+  ],
+  "key": {
+    "h": {
+      "item": "minecraft:quartz_block"
+    },
+    "o": {
+      "item": "minecraft:obsidian"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "glasscutter:glasscutter_strong",
+    "count": 1
+  }
+}

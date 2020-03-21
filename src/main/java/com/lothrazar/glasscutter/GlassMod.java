@@ -26,8 +26,11 @@ public class GlassMod {
     public static void onItemsRegistry(RegistryEvent.Register<Item> event) {
       Item.Properties properties = new Item.Properties().group(ItemGroup.TOOLS);// tab group
       IForgeRegistry<Item> r = event.getRegistry();
-      // create a static registry using static variables annoated with  net.minecraftforge.registries.ObjectHolder
-      r.register(new GlassCutter(properties).setRegistryName(MODID));
+      //normal is same durability as shears
+      r.register(new GlassCutter(properties.maxStackSize(1).maxDamage(238)).setRegistryName(MODID));
+      properties = new Item.Properties().group(ItemGroup.TOOLS);// tab group
+      //same damage as diamond pickaxe
+      r.register(new GlassCutter(properties.maxStackSize(1).maxDamage(1561)).setRegistryName("glasscutter_strong"));
     }
   }
 }

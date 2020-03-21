@@ -19,7 +19,7 @@ public class GlassCutter extends Item {
   public static final Tag<Block> GLASS = new BlockTags.Wrapper(new ResourceLocation("forge:glass"));
 
   public GlassCutter(Properties properties) {
-    super(properties.maxStackSize(1).maxDamage(1024));
+    super(properties);
   }
 
   @Override
