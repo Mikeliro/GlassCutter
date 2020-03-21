@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " hh",
+    " sh",
+    "s  "
+  ],
+  "key": {
+    "h": {
+      "item": "minecraft:quartz"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "glasscutter:glasscutter",
+    "count": 1
+  }
+}
