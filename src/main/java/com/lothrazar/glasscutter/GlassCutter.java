@@ -9,14 +9,13 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class GlassCutter extends Item {
 
-  public static final Tag<Block> GLASS = new BlockTags.Wrapper(new ResourceLocation("forge:glass"));
+  public static final ITag.INamedTag<Block> GLASS = BlockTags.makeWrapperTag("forge:glass");
 
   public GlassCutter(Properties properties) {
     super(properties);
