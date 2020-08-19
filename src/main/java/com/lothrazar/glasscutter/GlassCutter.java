@@ -1,6 +1,5 @@
 package com.lothrazar.glasscutter;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -8,14 +7,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ITag;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.common.Tags;
 
 public class GlassCutter extends Item {
-
-  public static final ITag.INamedTag<Block> GLASS = BlockTags.makeWrapperTag("forge:glass");
 
   public GlassCutter(Properties properties) {
     super(properties);
@@ -33,12 +29,14 @@ public class GlassCutter extends Item {
 
   @Override
   public boolean canHarvestBlock(BlockState blockIn) {
-    return blockIn.isIn(GLASS);
+    return blockIn.isIn(Tags.Blocks.GLASS)
+        || blockIn.isIn(Tags.Blocks.GLASS_PANES);
   }
 
   @Override
   public float getDestroySpeed(ItemStack stack, BlockState state) {
-    return state.getBlock().isIn(GLASS) ? 15.0F : super.getDestroySpeed(stack, state);
+    return state.getBlock().isIn(Tags.Blocks.GLASS)
+        || state.getBlock().isIn(Tags.Blocks.GLASS_PANES) ? 15.0F : super.getDestroySpeed(stack, state);
   }
 
   @Override
